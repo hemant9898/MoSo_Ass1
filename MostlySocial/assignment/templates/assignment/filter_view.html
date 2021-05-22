@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+
+
+
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+    />
+    <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
+    <meta name="author" content="PPType" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Jumbotron Template for Semantic-UI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      type="text/css"
+    />
+    <style>
+    </style>
+
+</head>
+<body style="background-color:white;" >
+  {% block filter_view %}
+
+
+    <div data-role="page" style="background-color:white; width:60%;margin-left:20%;" class="ui raised segment">
+        <h2>Apply Filter</h2>
+        <br><br>
+        <div class="ui info message" style="width:20%">
+          <i class="users icon"></i>
+          Follower Count
+        </div>
+        <div data-role="main" class="ui-content">
+          <div data-role="rangeslider">
+            <label for="price-min">Count in Million</label>
+            <input type="range" name="price-min" id="price-min" value="100" min="0" max="500">
+            <label for="price-max">Count in Million</label>
+            <input type="range" name="price-max" id="price-max" value="200" min="0" max="500">
+          </div>
+        </div>
+      
+      
+        <br><br><br><br>
+      
+      
+        <div class="ui info message" style="width:20%">
+          <i class="user plus icon"></i>
+          Following Count
+        </div>
+        <div data-role="main" class="ui-content">
+          <div data-role="rangeslider">
+            <label for="price-min">Count in Million</label>
+            <input type="range" name="price-min" id="price-min" value="100" min="0" max="500">
+            <label for="price-max">Count in Million</label>
+            <input type="range" name="price-max" id="price-max" value="200" min="0" max="500">
+          </div>
+        </div>
+        
+        
+    </div> 
+
+
+    <div class="ui raised segment" style="background-color:white;width:60%;margin-left:20%;">
+            
+        <div class="ui info message" style="width:13%">
+          <i class="map marker alternate icon"></i>
+          City
+        </div>
+        <select id="txtTitle" class="form-control selectpicker" multiple >
+                <option value="default">Please Select</option>
+                <option value="one">One</option>
+                <option value="two">Two</option>
+                <option value="three">three</option>
+                <option value="four">four</option>
+        </select>
+        
+        
+        <br><br><br><br><br>
+        
+        
+        <div class="ui info message" style="width:14%">
+          <i class="paper plane icon"></i>
+          Genre
+        </div>
+        <select  id="txtTitle" class="form-control selectpicker">
+                <option value="default">Please Select</option>
+                <option value="one">One</option>
+                <option value="two">Two</option>
+                <option value="three">three</option>
+                <option value="four">four</option>
+        </select>
+    </div>
+    
+    <br><br>
+    <button class="ui primary button" style="margin-left:20%">
+      Filter It
+    </button>
+    <button class="ui primary button" style="margin-left:48%">
+      Cancel
+    </button>
+    
+{% endblock %}
+</body>
+</html>

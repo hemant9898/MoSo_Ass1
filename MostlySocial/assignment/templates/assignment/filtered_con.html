@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- ending extra for filter -->
+
+
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+    />
+    <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
+    <meta name="author" content="PPType" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>MostlySocial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      type="text/css"
+    />
+    <style type="text/css">
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: grayscale;
+      }
+
+      .ui.form .inline.fields {
+        margin-bottom: 0;
+      }
+
+      .ui.message {
+        background-color: #eeeeee;
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 4rem;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+      }
+
+      .ui.menu > .ui.container > .header.item {
+        font-size: 1.4rem;
+        margin-left: -20px;
+      }
+
+      .ui.borderless.menu {
+        box-shadow: none;
+        flex-wrap: wrap;
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .ui.mobile.only.grid .ui.menu .ui.vertical.menu {
+        display: none;
+      }
+      
+      /*For Pagination*/
+        .pagination {
+          display: inline-block;
+        }
+        
+        .pagination a {
+          color: black;
+          float: left;
+          padding: 8px 16px;
+          text-decoration: none;
+          transition: background-color .3s;
+          border: 1px solid #ddd;
+        }
+        
+        .pagination a.active {
+          background-color: #4CAF50;
+          color: white;
+          border: 1px solid #4CAF50;
+        }
+        
+        .pagination a:hover:not(.active) {background-color: #ddd;}
+
+        /*Pagination ends*/
+
+        /*for filter*/
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed;  /*Stay in place */
+          z-index: 1; /* Sit on top */
+          /*padding-top: 25px;  Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%;  /*Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /*filtering end*/
+
+
+
+        /*slide Bar*/
+          [slider] {
+                  position: relative;
+                  height: 14px;
+                  border-radius: 10px;
+                  text-align: left;
+                  margin: 45px 0 10px 0;
+                }
+                
+                [slider] > div {
+                  position: absolute;
+                  left: 13px;
+                  right: 15px;
+                  height: 14px;
+                }
+                
+                [slider] > div > [inverse-left] {
+                  position: absolute;
+                  left: 0;
+                  height: 14px;
+                  border-radius: 10px;
+                  background-color: #CCC;
+                  margin: 0 7px;
+                }
+                
+                [slider] > div > [inverse-right] {
+                  position: absolute;
+                  right: 0;
+                  height: 14px;
+                  border-radius: 10px;
+                  background-color: #CCC;
+                  margin: 0 7px;
+                }
+                
+                [slider] > div > [range] {
+                  position: absolute;
+                  left: 0;
+                  height: 14px;
+                  border-radius: 14px;
+                  background-color: #1ABC9C;
+                }
+                
+                [slider] > div > [thumb] {
+                  position: absolute;
+                  top: -7px;
+                  z-index: 2;
+                  height: 28px;
+                  width: 28px;
+                  text-align: left;
+                  margin-left: -11px;
+                  cursor: pointer;
+                  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+                  background-color: #FFF;
+                  border-radius: 50%;
+                  outline: none;
+                }
+                
+                [slider] > input[type=range] {
+                  position: absolute;
+                  pointer-events: none;
+                  -webkit-appearance: none;
+                  z-index: 3;
+                  height: 14px;
+                  top: -2px;
+                  width: 100%;
+                  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                  filter: alpha(opacity=0);
+                  -moz-opacity: 0;
+                  -khtml-opacity: 0;
+                  opacity: 0;
+                }
+                
+                div[slider] > input[type=range]::-ms-track {
+                  -webkit-appearance: none;
+                  background: transparent;
+                  color: transparent;
+                }
+                
+                div[slider] > input[type=range]::-moz-range-track {
+                  -moz-appearance: none;
+                  background: transparent;
+                  color: transparent;
+                }
+                
+                div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+                  background: transparent;
+                  border: transparent;
+                }
+                
+                div[slider] > input[type=range]:focus {
+                  outline: none;
+                }
+                
+                div[slider] > input[type=range]::-ms-thumb {
+                  pointer-events: all;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 0px;
+                  border: 0 none;
+                  background: red;
+                }
+                
+                div[slider] > input[type=range]::-moz-range-thumb {
+                  pointer-events: all;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 0px;
+                  border: 0 none;
+                  background: red;
+                }
+                
+                div[slider] > input[type=range]::-webkit-slider-thumb {
+                  pointer-events: all;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 0px;
+                  border: 0 none;
+                  background: red;
+                  -webkit-appearance: none;
+                }
+                
+                div[slider] > input[type=range]::-ms-fill-lower {
+                  background: transparent;
+                  border: 0 none;
+                }
+                
+                div[slider] > input[type=range]::-ms-fill-upper {
+                  background: transparent;
+                  border: 0 none;
+                }
+                
+                div[slider] > input[type=range]::-ms-tooltip {
+                  display: none;
+                }
+                
+                [slider] > div > [sign] {
+                  opacity: 0;
+                  position: absolute;
+                  margin-left: -11px;
+                  top: -39px;
+                  z-index:3;
+                  background-color: #1ABC9C;
+                  color: #fff;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 28px;
+                  -webkit-border-radius: 28px;
+                  align-items: center;
+                  -webkit-justify-content: center;
+                  justify-content: center;
+                  text-align: center;
+                }
+                
+                [slider] > div > [sign]:after {
+                  position: absolute;
+                  content: '';
+                  left: 0;
+                  border-radius: 16px;
+                  top: 19px;
+                  border-left: 14px solid transparent;
+                  border-right: 14px solid transparent;
+                  border-top-width: 16px;
+                  border-top-style: solid;
+                  border-top-color: #1ABC9C;
+                }
+                
+                [slider] > div > [sign] > span {
+                  font-size: 12px;
+                  font-weight: 700;
+                  line-height: 28px;
+                }
+                
+                [slider]:hover > div > [sign] {
+                  opacity: 1;
+                }
+        /*end*/
+
+    </style>
+  </head>
+
+
+  {% ifequal flag "1"%}
+  <script>
+    // window.location.reload();
+    xyz();
+    alert("text")
+    function xyz() {
+      
+        $ajax({
+          alert("textincomeee")
+          type: "POST",
+          url: "{% url 'assignment:ajax-test-view' %}",   
+          data: {csrfmiddlewaretoken: '{{ csrf_token }}',
+                text: "this is my test view"},   /* Passing the text data */
+          success:  function(response){
+                 alert(response);
+             }
+      });
+      
+    }
+  </script>
+  <script> 
+    
+  </script>
+
+  {% endifequal %}
+  <body id="root">
+
+    <div class="ui tablet computer only padded grid">
+      <div class="ui top fixed borderless inverted fluid menu">
+        <div class="ui container">
+          <!--<a class="header item">Project Name</a>-->
+          <a class="header item">Filtered Content</a>
+          <div class="right menu">
+              
+            <div class="item">
+              <form class="ui form">
+                <div class="inline fields">
+                    
+                  <!--<div class="field">-->
+                  <!--  <input placeholder="Email" type="text" />-->
+                  <!--</div>-->
+                  <!--<div class="field">-->
+                  <!--  <input placeholder="Password" type="password" />-->
+                  <!--</div>-->
+                  
+                  <div class="field">
+                    <a onclick="location.reload();location.href='{% url 'assignment:dashboard_view' %}'"><button class="ui blue button" >Dashboard</button></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui mobile only padded grid">
+      <div class="ui top fixed borderless fluid inverted huge menu">
+        <a class="header item" data-tab="first">Filter</a>
+
+        <div class="ui active tab segment" data-tab="first">
+            {% block filter_view %}
+                {% include 'assignment/filter_view.html'%}
+            {% endblock %}
+        </div>
+
+        <div class="right menu">
+          <div class="item">
+            <button class="ui icon toggle basic inverted button">
+              <i class="content icon"></i>
+            </button>
+          </div>
+        </div>
+        <div class="ui vertical borderless inverted fluid menu">
+          <div class="item">
+            <form class="ui form">
+              <!--<div class="field">-->
+              <!--    <input placeholder="Email" type="text" /></div>-->
+              <!--<div class="field">-->
+              <!--  <input placeholder="Password" type="password" />-->
+              <!--</div>-->
+              <div class="field">
+                <button class="ui green button">Home</button>
+              </div>
+              <div class="field">
+                <button class="ui green button">Logout</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+
+
+
+
+
+    <div class="ui message">
+      <div class="ui container">
+        <!-- <h1 class="ui huge header"></h1> -->
+            <div class="ui four column grid">
+              {% for account in posts.object_list  %} 
+              <div class="column">
+                <div class="ui card">
+                  <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uENsfHX_t2wf1PJ9YL2jw8XkWV7UXK7uiuT9WDHhlZbZthwUVQVjz1kwkCZp2njRQN4&usqp=CAU">
+                  </div>
+                  <div class="content">
+                    <a class="header">{{account.name}}</a>
+                    <div class="meta">
+                      <span class="date">{{account.genre}}</span>
+                    </div>
+                    <div class="description"><a>
+                      {{account.contact_details}}
+                    </a>
+                    </div>
+                  </div>
+                  <div class="extra content">
+                    <a>
+                      <i class="users icon"></i>
+                      {{account.follower_count}}
+                    </a>
+                    <a style="margin-left:35%">
+                      <i class="user plus icon"></i>
+                      {{account.following_count}}
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+      </div>
+
+
+      <!-- PAGINATION ENDS HERE -->
+      <div style="margin-left:45%">
+        {% if posts.has_other_pages %}
+          <ul class="pagination">
+            {% if posts.has_previous %}
+              <!-- <li ><a onclick="Refresh()"  onclick="window.open('?page={{ posts.previous_page_number }}')"  >&laquo;</a> </li> -->
+              <li ><a href="#" onclick="location.reload();location.href='?page={{ posts.previous_page_number }}'" >&laquo;</a> </li>
+            {% else %}
+              <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in posts.paginator.page_range %}
+              {% if posts.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+              {% else %}
+                <li><a href="#" onclick="location.reload();location.href='?page={{ i }}'">{{ i }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if posts.has_next %}
+              <li><a href="#" onclick="location.reload();location.href='?page={{ posts.next_page_number }}'">&raquo;</a></li>
+            {% else %}
+              <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+
+    
+    
+
+
+
+
+
+    <!-- for filtering -->
+    <div id="myModal" class="modal">
+      <form action="{% url 'assignment:login_view'%}" method="POST">
+        {%  csrf_token %}
+      <div style="background-color:white; width:60%;margin-left:20%;" class="ui raised segment">
+        <h2>Apply Filter</h2>
+        <br>
+        <div class="ui info message" style="width:30%">
+          <i class="user plus icon"></i>
+          Follower Count in Million
+        </div>
+        
+        
+        <div slider id="slider-distance">
+              <div>
+                <div inverse-left style="width:70%;"></div>
+                <div inverse-right style="width:70%;"></div>
+                <div range style="left:30%;right:40%;"></div>
+                <span thumb style="left:30%;"></span>
+                <span thumb style="left:60%;"></span>
+                <div sign style="left:30%;">
+                  <span id="value">30</span>
+                </div>
+                <div sign style="left:60%;">
+                  <span id="value">60</span>
+                </div>
+              </div>
+              <input type="range" name="follower_min" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+              this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+              var children = this.parentNode.childNodes[1].childNodes;
+              children[1].style.width=value+'%';
+              children[5].style.left=value+'%';
+              children[7].style.left=value+'%';children[11].style.left=value+'%';
+              children[11].childNodes[1].innerHTML=this.value;" />
+            
+              <input type="range" name="follower_max" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+              this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+              var children = this.parentNode.childNodes[1].childNodes;
+              children[3].style.width=(100-value)+'%';
+              children[5].style.right=(100-value)+'%';
+              children[9].style.left=value+'%';children[13].style.left=value+'%';
+              children[13].childNodes[1].innerHTML=this.value;" />
+            </div>
+            
+            <br>
+        
+            <div class="ui info message" style="width:30%">
+              <i class="users icon"></i>
+              Following Count in Million
+            </div>
+            <div slider id="slider-distance">
+                  <div>
+                    <div inverse-left style="width:70%;"></div>
+                    <div inverse-right style="width:70%;"></div>
+                    <div range style="left:30%;right:40%;"></div>
+                    <span thumb style="left:30%;"></span>
+                    <span thumb style="left:60%;"></span>
+                    <div sign style="left:30%;">
+                      <span id="value">30</span>
+                    </div>
+                    <div sign style="left:60%;">
+                      <span id="value">60</span>
+                    </div>
+                  </div>
+                  <input type="range" name="following_min" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[1].style.width=value+'%';
+                  children[5].style.left=value+'%';
+                  children[7].style.left=value+'%';children[11].style.left=value+'%';
+                  children[11].childNodes[1].innerHTML=this.value;" />
+                
+                  <input type="range" name="following_max" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[3].style.width=(100-value)+'%';
+                  children[5].style.right=(100-value)+'%';
+                  children[9].style.left=value+'%';children[13].style.left=value+'%';
+                  children[13].childNodes[1].innerHTML=this.value;" />
+                </div>
+                
+                
+                <br>
+                
+                <div class="ui info message" style="width:13%">
+                  <i class="map marker alternate icon"></i>
+                  City
+                </div>
+                <select id="txtTitle" name="city" class="form-control selectpicker" multiple="multiple" >
+                        <option value="one">One</option>
+                        <option value="two">Two</option>
+                        <option value="three">three</option>
+                        <option value="four">four</option>
+                </select>
+                
+                
+                <br>
+                
+                
+                <div class="ui info message" style="width:14%">
+                  <i class="paper plane icon"></i>
+                  Genre
+                </div>
+                <select  id="txtTitlep" name="genre" class="form-control selectpicker">
+                        <option value="default">Please Select</option>
+                        <option value="one">One</option>
+                        <option value="two">Two</option>
+                        <option value="three">three</option>
+                        <option value="four">four</option>
+                </select>
+        </div>
+      
+         <div class="ui raised segment" style="background-color:white;width:60%;margin-left:20%;">
+            <button class="ui primary button"  type="submit" style="margin-left:5%" onclick="location.reload();location.href='{% url 'assignment:login_view' %}'" >
+              Filter It
+            </button>
+            <a class="ui primary button" style="margin-left:70%" onclick="myFunction();">
+              Cancel
+            </a>
+        </div>
+      </form>
+      </div>
+          
+      
+      </div> 
+
+
+      
+
+     
+    
+
+    <!-- end filtering -->
+
+    
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".ui.toggle.button").click(function() {
+          $(".mobile.only.grid .ui.vertical.menu").toggle(100);
+        });
+      });
+    </script>
+
+
+    <!-- for filtering option -->
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    function myFunction(){
+        modal.style.display = "none";
+        // return true;
+    }; 
+
+    function Refresh(){
+        
+        window.location.reload();
+        return true;
+    }; 
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    $("#myHref").on('click', function() {
+      alert("inside onclick");
+    });
+    </script>
+    <!-- end -->
+  </body>
+</html>
